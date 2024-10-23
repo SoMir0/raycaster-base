@@ -72,13 +72,7 @@ void CastRay(Player player, float rayAngle, int xpos) {
     {
         float wallHeight = SCREEN_HEIGHT / (distance * cos(player.angle - rayAngle) * 2 * FOVCHANGE);
         float startPos = (SCREEN_HEIGHT >> 1) - wallHeight, endPos = startPos + wallHeight * 2;
-        /*DrawRectangle(xpos * lineThickness, startPos, lineThickness + 1, wallHeight * 2, (side == 1) ? WHITE : LIGHTGRAY);*/
-        int textureHeight = 32;
-        float step =  textureHeight/(wallHeight * 2) ;
-        for(int i = 0; i < (endPos - startPos); i+=step)
-        {
-            DrawRectangle(xpos * lineThickness, startPos + i * step, lineThickness + 1, step, (i % 2 == 0) ? BLACK : WHITE);
-        }
+        DrawRectangle(xpos * lineThickness, startPos, lineThickness + 1, wallHeight * 2, (side == 1) ? WHITE : LIGHTGRAY);
     }
 }
 
